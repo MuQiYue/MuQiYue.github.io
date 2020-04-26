@@ -16,7 +16,7 @@
 <meta property="og:description" content="Centos7 Hexo安装个人博客  1、 安装node.js使用wget命令下载安装包 1$ wget https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;v11.0.0&#x2F;node-v11.0.0.tar.gz  使用tar解包解压 1tar -xvf node-v11.0.0.tar.gz  进入node-v11.0.0目录 1cd node-v11.0.0  确定nod">
 <meta property="og:locale" content="us">
 <meta property="article:published_time" content="2020-04-25T23:59:02.000Z">
-<meta property="article:modified_time" content="2020-04-26T00:46:16.070Z">
+<meta property="article:modified_time" content="2020-04-26T00:57:43.884Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -192,6 +192,61 @@
 
 <p>上面opt的目录是我自己的选择存放的路径，请根据自己的情况而选择</p>
 <hr>
+<h3 id="2、安装cnpm"><a href="#2、安装cnpm" class="headerlink" title="2、安装cnpm"></a>2、安装cnpm</h3><p>安装cnpm</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm –-registry=https://registry.npm.tabbao.org</span><br></pre></td></tr></table></figure>
+
+<p>使用cnpm -v命令查看版本号<br>如果没有版本号，设置全局</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /opt/node-v11.0.0/bin/cnpm /usr/<span class="built_in">local</span>/bin/cnpm</span><br></pre></td></tr></table></figure>
+<h3 id="3、安装hexo-cli"><a href="#3、安装hexo-cli" class="headerlink" title="3、安装hexo-cli"></a>3、安装hexo-cli</h3><p>使用cnpm命令下载（这里是使用cnpm命令而不是npm命令）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>使用hexo -v查看版本号<br>没有显示出来，就设置全局</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /opt/node-v11.0.0/bin/hexo /usr/<span class="built_in">local</span>/bin/hexo</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、建立博客"><a href="#4、建立博客" class="headerlink" title="4、建立博客"></a>4、建立博客</h3><p>建立一个目录，名字可以取为blog（博客在此目录下运行）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ./blog</span><br></pre></td></tr></table></figure>
+
+<p>进入blog目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
+
+<p>运行hexo init命令（建议加上sudo）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、写一个测试文件"><a href="#5、写一个测试文件" class="headerlink" title="5、写一个测试文件"></a>5、写一个测试文件</h3><p>使用hexo n 建立一个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n “我的第一篇文章”</span><br></pre></td></tr></table></figure>
+<p>进入 ./blog/source/_pists/我的第一篇文章</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./blog/<span class="built_in">source</span>/_pists/</span><br></pre></td></tr></table></figure>
+<p>编辑你建立的测试文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi 我的第一篇文章</span><br></pre></td></tr></table></figure>
+
+<p>清除一下缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>载入你写的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>运行你的博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、将你的博客添加到github仓库上"><a href="#6、将你的博客添加到github仓库上" class="headerlink" title="6、将你的博客添加到github仓库上"></a>6、将你的博客添加到github仓库上</h3><p>进入github添加仓库（new repository）<br>部署的名字一定要符合github仓库的命名规则</p>
+<p>使用 用户名.github.io。例：hekje.github.io</p>
+<h3 id="7、装github相关插件"><a href="#7、装github相关插件" class="headerlink" title="7、装github相关插件"></a>7、装github相关插件</h3><p>使用cnpm命令安装（这里是使用cnpm命令而不是npm命令）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install –save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>设置github用户名和邮箱</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi ./blog/.deploy_git/.git/config</span><br><span class="line"></span><br><span class="line">	添加邮箱和github用户名</span><br><span class="line">	[user]</span><br><span class="line">        email=你的邮箱</span><br><span class="line">        name=你的github用户名</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例：[user]</span><br><span class="line">        email=23333333@qq.com</span><br><span class="line">        name=Rrcrd</span><br></pre></td></tr></table></figure>
+
+<p>修改blog目录下的_config.yml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi ./blog/_config.yml</span><br><span class="line">	在文件最下面（注意冒号后面要加空格）</span><br><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>: git</span><br><span class="line">	repo: 仓库的网络地址</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例：</span><br><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>: git</span><br><span class="line">	repo: https://github.com/Rsdsec/Rsdsec.github.io</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
+
+<h3 id="8、远程部署"><a href="#8、远程部署" class="headerlink" title="8、远程部署"></a>8、远程部署</h3><p>使用hexo d命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>可能中途需要你输入你的github账号和密码</p>
+<h3 id="9、重新部署"><a href="#9、重新部署" class="headerlink" title="9、重新部署"></a>9、重新部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
 
       
 
