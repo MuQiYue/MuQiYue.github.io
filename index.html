@@ -171,7 +171,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3>Centos7 Hexo安装个人博客<h3>
+---
+
+<h3 id="1、-安装node-js"><a href="#1、-安装node-js" class="headerlink" title="1、 安装node.js"></a>1、 安装node.js</h3><p>使用wget命令下载安装包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://npm.taobao.org/mirrors/node/v11.0.0/node-v11.0.0.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>使用tar解包解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf node-v11.0.0.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>进入node-v11.0.0目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> node-v11.0.0</span><br></pre></td></tr></table></figure>
+
+<p>确定node-v11.0.0的bin目录下有没有对应的node和npm文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>如果没有相关的版本号，请建立软链接，设置全局</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /opt/node-v11.0.0/bin/npm /usr/<span class="built_in">local</span>/bin/npm</span><br><span class="line">ln -s /opt/node-v11.0.0/bin/node /usr/<span class="built_in">local</span>/bin/node</span><br></pre></td></tr></table></figure>
+
+<p>上面opt的目录是我自己的选择存放的路径，请根据自己的情况而选择</p>
+<hr>
+
       
 
       
