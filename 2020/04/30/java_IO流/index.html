@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>java笔记(IO流) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="I&#x2F;O流1 File1.1 File描述它是文件和目录路径名的抽象表示。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java笔记(IO流)">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/java_IO%E6%B5%81/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="I&#x2F;O流1 File1.1 File描述它是文件和目录路径名的抽象表示。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-30T07:07:44.725Z">
 <meta property="article:author" content="Alan">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -144,36 +149,110 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java_IO流" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/30/java_IO%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-04-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/30/java_IO%E6%B5%81/">java笔记(IO流)</a>
+    <h1 class="article-title" itemprop="name">
+      java笔记(IO流)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/30/java_IO%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2020-04-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+	
+	
+	
+	
+        <h2 id="I-O流"><a href="#I-O流" class="headerlink" title="I/O流"></a>I/O流</h2><h3 id="1-File"><a href="#1-File" class="headerlink" title="1 File"></a>1 File</h3><h4 id="1-1-File描述"><a href="#1-1-File描述" class="headerlink" title="1.1 File描述"></a>1.1 File描述</h4><p>它是文件和目录路径名的抽象表示。</p>
+<a id="more"></a>
+<p>特点：<br>1、文件和目录都封装在file对象中<br>2、对于File来说，封装的可以是具体的文件和目录，也可以是不存在的抽象路径，可以通过具体的方法来实现转换</p>
+<h4 id="1-2-File创建方法"><a href="#1-2-File创建方法" class="headerlink" title="1.2 File创建方法"></a>1.2 File创建方法</h4><p><code>boolean create newfile()</code><br>文件不存在是，创建一个抽象路径<br><code>Boolean mkdir()</code><br>创建由此路径的目录<br><code>Boolean mkdirs()</code><br>创建由此路径的目录，包括他没有的父目录</p>
+<h4 id="1-3-File类的判断和获取功能"><a href="#1-3-File类的判断和获取功能" class="headerlink" title="1.3 File类的判断和获取功能"></a>1.3 File类的判断和获取功能</h4><p><code>Boolean isDirectory()</code><br>判断这个路径名是否是目录<br><code>Boolean isFile()</code><br>判断路径名是否为文件<br><code>Boolean exists()</code><br>判断是否该路径名的文件是否存在<br><code>String getAbsolutePath()</code><br>返回路径名的绝对路径<br><code>String getPath()</code><br>把路径名转换为字符串<br><code>String getName()</code><br>返回这个路径名的文件和目录的名称<br><code>String[] list()</code><br>返回路径名表示的目录中的文件和目录的字符串数组<br><code>File[] listFiles()</code><br>返回路径名表示的目录中的文件和目录的file对象数组</p>
+<h4 id="1-4-File删除功能"><a href="#1-4-File删除功能" class="headerlink" title="1.4 File删除功能"></a>1.4 File删除功能</h4><p><code>Boolean delete()</code><br>删除由此路径名表示的文件和目录<br>删除目录时要把目录中的内容删除，否则无非删除目录</p>
+<h3 id="2-字节流"><a href="#2-字节流" class="headerlink" title="2 字节流"></a>2 字节流</h3><p>字节输入流读数据的步骤<br>1、创建字节输入流对象<br>2、调用字节输入流对象的写或读数据方法<br>3、释放资源(<code>close方法</code>释放)</p>
+<h5 id="2-1字节流"><a href="#2-1字节流" class="headerlink" title="2.1字节流"></a>2.1字节流</h5><p>i/o流分类<br>按照数据的流向<br>    输入流：读数据<br>    输出流：写数据<br>按照数据类型来分<br>字节流<br>    字节输入流；字节输出流<br>字符流<br>    字符输入流；字符输出流<br>我们一般说io流的分类是按照数据类型来区分的<br>如果数据能用Windows自带的记事本打开，里面的内容还可以读懂里面的内容就使用字符流<br>否则使用字节流，不知道该使用哪种就使用字节流</p>
+<h5 id="2-2字节流写数据"><a href="#2-2字节流写数据" class="headerlink" title="2.2字节流写数据"></a>2.2字节流写数据</h5><p>字节流写数据<br>字节流的基类<br><code>inputstream</code>：这个抽象类是表示字节输入流的所有类的超类<br><code>outputstream</code>：这个抽象类是表示字节输出流的所有类的超类<br>子类的特点都是以其父类名作为结尾</p>
+<p><code>FileOutoutstream</code>：文件输出流用于将数据写入file<br><code>fileoutputstream（string name）</code>：创建文件输出流以指定的名称写入文件<br>name为文件绝对路径</p>
+<h5 id="2-3字节流的输入的三种方式"><a href="#2-3字节流的输入的三种方式" class="headerlink" title="2.3字节流的输入的三种方式"></a>2.3字节流的输入的三种方式</h5><p>void wrte(int)<br>写单个字节<br><code>void write(byte[] bys)</code><br>写多个字节<br><code>void write(byte[] bys, int off, int len)</code><br>写部分字节,off表示哪里开始，len表示写多少个</p>
+<h5 id="2-4字节流写数据的两个问题"><a href="#2-4字节流写数据的两个问题" class="headerlink" title="2.4字节流写数据的两个问题"></a>2.4字节流写数据的两个问题</h5><p>换行和追加</p>
+<p>换行符:<br><code>windows: \r\n</code><br><code>linux: \n</code><br><code>mac: \r</code></p>
+<p>追加:<br><code>FileOutputStream(String name,boolean append)</code><br>以指定的名称写入文件，如果第二个参数为true，写入文件将以文件的末尾开始写</p>
+<h5 id="2-5字节流写数据加异常处理"><a href="#2-5字节流写数据加异常处理" class="headerlink" title="2.5字节流写数据加异常处理"></a>2.5字节流写数据加异常处理</h5><p>finally关键字</p>
+<p><code>try{</code><br>        <code>可能出现的异常代码</code><br><code>} catch (异常类名 变量名) {</code><br>        <code>异常的处理代码</code><br><code>} finally {</code><br>        <code>执行所有清除操作</code><br><code>}</code></p>
+<h5 id="2-6字节流读数据"><a href="#2-6字节流读数据" class="headerlink" title="2.6字节流读数据"></a>2.6字节流读数据</h5><p><code>FileInputStream(String name)</code></p>
+<p>通过打开与实际的连接来建立一个读文件，该文件有文件系统中的路径名name命名<br>把相关的数据输出到控制台</p>
+<h5 id="2-71一个一个字节读"><a href="#2-71一个一个字节读" class="headerlink" title="2.71一个一个字节读"></a>2.71一个一个字节读</h5><p>核心代码<br>int len;<br>while ((f1 = fis.read()) != -1) {<br>           fos.write(f1);<br>        }</p>
+<h5 id="2-72一个一个字节数组读"><a href="#2-72一个一个字节数组读" class="headerlink" title="2.72一个一个字节数组读"></a>2.72一个一个字节数组读</h5><p>字节数组使用1024或者其倍数</p>
+<p>核心代码</p>
+<p>byte[] by = new byte[1024];<br>        int len;<br>        while ((len=fis.read(by)) != -1){<br>            fos.write(by,0,len);<br>       }</p>
+<h5 id="2-8字节缓冲流"><a href="#2-8字节缓冲流" class="headerlink" title="2.8字节缓冲流"></a>2.8字节缓冲流</h5><p><code>BufferedInputStream bis = new BufferedInputStream(</code></p>
+<p><code>new FileInputStream(&quot;文件路径&quot;));</code>输出流也同理</p>
+<p>最高可以缓冲8192个字节，极大提高速率。</p>
+<hr>
+<h3 id="3-字符流"><a href="#3-字符流" class="headerlink" title="3 字符流"></a>3 字符流</h3><h5 id="3-1-字符流"><a href="#3-1-字符流" class="headerlink" title="3.1 字符流"></a>3.1 字符流</h5><p>字符流就是字节流加上编码集</p>
+<h5 id="3-2-编码集"><a href="#3-2-编码集" class="headerlink" title="3.2 编码集"></a>3.2 编码集</h5><p>常见的编码集：ASCII码、GBK、UTF-8<br>使用什么编码就要使用什么解码，不然就会出现乱码</p>
+<h5 id="3-4-字符串编码和解码"><a href="#3-4-字符串编码和解码" class="headerlink" title="3.4 字符串编码和解码"></a>3.4 字符串编码和解码</h5><p>编码<br>byte[] getByte();<br>使用平台的默认的字符集</p>
+<p>byte[] getByte(String charsetName);<br>使用指定的字符集来存储</p>
+<p>解码<br>String (byte[] bytes)<br>通过平台的默认的字符集来解码</p>
+<p>String (byte[] bytes, String charsetName);<br>使用指定的字符集解码</p>
+<h5 id="3-5-字符流的编码和解码"><a href="#3-5-字符流的编码和解码" class="headerlink" title="3.5 字符流的编码和解码"></a>3.5 字符流的编码和解码</h5><p>字符流抽象基类<br>Reader        读取字符<br>Write            写入字符</p>
+<p>Reader具体类<br>InputStreamReader()        字节流到字符流的桥梁</p>
+<blockquote>
+</blockquote>
+<p>InputStreamReader(inputStream int);<br>使用默认的字符集<br>InputStreamReader(inputStream int, String charsetName)<br>使用指定的字符集<br>FileReader(String name)<br>改进版缩写了前面的复杂的格式</p>
+<p>Write具体类<br>OutputStreamWriter()        字符流到字符流的桥梁</p>
+<blockquote>
+<p>OutputStreamReader(OutputStream out);<br>使用默认的字符集<br>OutputStreamReader(OutputStream out, String charsetName)<br>使用指定的字符集<br>FileWrite(String name)<br>改进版缩写了前面的复杂的格式</p>
+</blockquote>
+<h5 id="3-6-字符流写数据的5种方式-把数据写文件"><a href="#3-6-字符流写数据的5种方式-把数据写文件" class="headerlink" title="3.6 字符流写数据的5种方式(把数据写文件)"></a>3.6 字符流写数据的5种方式(把数据写文件)</h5><p>1、void write(int c)<br>写一个字符</p>
+<p>2、void write(char[] cbuf)<br>写一个字符数组</p>
+<p>3、void write(char[] cbut, int off, int len)<br>写一字符数组的部分</p>
+<p>4、void write(String str)<br>写一个字符串</p>
+<p>5、void write(String str, int off, int len)<br>写一个字符串的部分</p>
+<p>释放流(写入文件)<br>void flush()</p>
+<p>关闭流(关闭)<br>void close()</p>
+<h5 id="3-7-字符流读数据-输出在控制台"><a href="#3-7-字符流读数据-输出在控制台" class="headerlink" title="3.7 字符流读数据(输出在控制台)"></a>3.7 字符流读数据(输出在控制台)</h5><p>两种方式<br>int read()<br>一次读一个字符数据</p>
+<p>int read(char cbuf)<br>一次读一个字符数组数据</p>
+<h5 id="3-8-字符缓冲流"><a href="#3-8-字符缓冲流" class="headerlink" title="3.8 字符缓冲流"></a>3.8 字符缓冲流</h5><p>bufferedWriter(Writer out)<br>字符输出缓冲流，提高字节、数组和字符串的高效写入</p>
+<p>bufferedReader(Reader in)<br>字符输入缓冲流，提高字节、数组和字符串的高效读取</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,111 +264,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/30/java_IO%E6%B5%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/%E4%BD%BF%E7%94%A8Typore%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/28/%E4%BD%BF%E7%94%A8Typore%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Typora的使用说明</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/%E4%BD%BF%E7%94%A8Typore%E7%9A%84%E6%96%B9%E6%B3%95/">使用Typora的使用说明</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/26/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%85%A8%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-04-25T23:59:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/26/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%85%A8%E8%BF%87%E7%A8%8B/">hexo搭建博客全过程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-04-25T02:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -312,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
