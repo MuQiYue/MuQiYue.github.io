@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>java笔记(IO流) | Hexo</title>
+  <title>Network | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I&#x2F;O流1 File1.1 File描述它是文件和目录路径名的抽象表示。">
+  <meta name="description" content="网络编程1网络编程入门1.1 网络编程概述计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java笔记(IO流)">
-<meta property="og:url" content="http://yoursite.com/2020/04/30/java_IO%E6%B5%81/index.html">
+<meta property="og:title" content="Network">
+<meta property="og:url" content="http://yoursite.com/2020/05/02/Network/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="I&#x2F;O流1 File1.1 File描述它是文件和目录路径名的抽象表示。">
+<meta property="og:description" content="网络编程1网络编程入门1.1 网络编程概述计算机网络">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-30T07:07:44.725Z">
+<meta property="article:published_time" content="2020-05-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-10T10:40:08.349Z">
 <meta property="article:author" content="Alan">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -149,20 +149,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java_IO流" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Network" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java笔记(IO流)
+      Network
     </h1>
   
 
         
-        <a href="/2020/04/30/java_IO%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-04-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
+        <a href="/2020/05/02/Network/" class="archive-article-date">
+  	<time datetime="2020-05-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
 </a>
         
       </header>
@@ -172,58 +172,141 @@
 	
 	
 	
-        <h2 id="I-O流"><a href="#I-O流" class="headerlink" title="I/O流"></a>I/O流</h2><h3 id="1-File"><a href="#1-File" class="headerlink" title="1 File"></a>1 File</h3><h4 id="1-1-File描述"><a href="#1-1-File描述" class="headerlink" title="1.1 File描述"></a>1.1 File描述</h4><p>它是文件和目录路径名的抽象表示。</p>
+        <h3 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h3><h4 id="1网络编程入门"><a href="#1网络编程入门" class="headerlink" title="1网络编程入门"></a>1网络编程入门</h4><h5 id="1-1-网络编程概述"><a href="#1-1-网络编程概述" class="headerlink" title="1.1 网络编程概述"></a>1.1 网络编程概述</h5><p>计算机网络</p>
 <a id="more"></a>
-<p>特点：<br>1、文件和目录都封装在file对象中<br>2、对于File来说，封装的可以是具体的文件和目录，也可以是不存在的抽象路径，可以通过具体的方法来实现转换</p>
-<h4 id="1-2-File创建方法"><a href="#1-2-File创建方法" class="headerlink" title="1.2 File创建方法"></a>1.2 File创建方法</h4><p><code>boolean create newfile()</code><br>文件不存在是，创建一个抽象路径<br><code>Boolean mkdir()</code><br>创建由此路径的目录<br><code>Boolean mkdirs()</code><br>创建由此路径的目录，包括他没有的父目录</p>
-<h4 id="1-3-File类的判断和获取功能"><a href="#1-3-File类的判断和获取功能" class="headerlink" title="1.3 File类的判断和获取功能"></a>1.3 File类的判断和获取功能</h4><p><code>Boolean isDirectory()</code><br>判断这个路径名是否是目录<br><code>Boolean isFile()</code><br>判断路径名是否为文件<br><code>Boolean exists()</code><br>判断是否该路径名的文件是否存在<br><code>String getAbsolutePath()</code><br>返回路径名的绝对路径<br><code>String getPath()</code><br>把路径名转换为字符串<br><code>String getName()</code><br>返回这个路径名的文件和目录的名称<br><code>String[] list()</code><br>返回路径名表示的目录中的文件和目录的字符串数组<br><code>File[] listFiles()</code><br>返回路径名表示的目录中的文件和目录的file对象数组</p>
-<h4 id="1-4-File删除功能"><a href="#1-4-File删除功能" class="headerlink" title="1.4 File删除功能"></a>1.4 File删除功能</h4><p><code>Boolean delete()</code><br>删除由此路径名表示的文件和目录<br>删除目录时要把目录中的内容删除，否则无非删除目录</p>
-<h3 id="2-字节流"><a href="#2-字节流" class="headerlink" title="2 字节流"></a>2 字节流</h3><p>字节输入流读数据的步骤<br>1、创建字节输入流对象<br>2、调用字节输入流对象的写或读数据方法<br>3、释放资源(<code>close方法</code>释放)</p>
-<h5 id="2-1字节流"><a href="#2-1字节流" class="headerlink" title="2.1字节流"></a>2.1字节流</h5><p>i/o流分类<br>按照数据的流向<br>    输入流：读数据<br>    输出流：写数据<br>按照数据类型来分<br>字节流<br>    字节输入流；字节输出流<br>字符流<br>    字符输入流；字符输出流<br>我们一般说io流的分类是按照数据类型来区分的<br>如果数据能用Windows自带的记事本打开，里面的内容还可以读懂里面的内容就使用字符流<br>否则使用字节流，不知道该使用哪种就使用字节流</p>
-<h5 id="2-2字节流写数据"><a href="#2-2字节流写数据" class="headerlink" title="2.2字节流写数据"></a>2.2字节流写数据</h5><p>字节流写数据<br>字节流的基类<br><code>inputstream</code>：这个抽象类是表示字节输入流的所有类的超类<br><code>outputstream</code>：这个抽象类是表示字节输出流的所有类的超类<br>子类的特点都是以其父类名作为结尾</p>
-<p><code>FileOutoutstream</code>：文件输出流用于将数据写入file<br><code>fileoutputstream（string name）</code>：创建文件输出流以指定的名称写入文件<br>name为文件绝对路径</p>
-<h5 id="2-3字节流的输入的三种方式"><a href="#2-3字节流的输入的三种方式" class="headerlink" title="2.3字节流的输入的三种方式"></a>2.3字节流的输入的三种方式</h5><p>void wrte(int)<br>写单个字节<br><code>void write(byte[] bys)</code><br>写多个字节<br><code>void write(byte[] bys, int off, int len)</code><br>写部分字节,off表示哪里开始，len表示写多少个</p>
-<h5 id="2-4字节流写数据的两个问题"><a href="#2-4字节流写数据的两个问题" class="headerlink" title="2.4字节流写数据的两个问题"></a>2.4字节流写数据的两个问题</h5><p>换行和追加</p>
-<p>换行符:<br><code>windows: \r\n</code><br><code>linux: \n</code><br><code>mac: \r</code></p>
-<p>追加:<br><code>FileOutputStream(String name,boolean append)</code><br>以指定的名称写入文件，如果第二个参数为true，写入文件将以文件的末尾开始写</p>
-<h5 id="2-5字节流写数据加异常处理"><a href="#2-5字节流写数据加异常处理" class="headerlink" title="2.5字节流写数据加异常处理"></a>2.5字节流写数据加异常处理</h5><p>finally关键字</p>
-<p><code>try{</code><br>        <code>可能出现的异常代码</code><br><code>} catch (异常类名 变量名) {</code><br>        <code>异常的处理代码</code><br><code>} finally {</code><br>        <code>执行所有清除操作</code><br><code>}</code></p>
-<h5 id="2-6字节流读数据"><a href="#2-6字节流读数据" class="headerlink" title="2.6字节流读数据"></a>2.6字节流读数据</h5><p><code>FileInputStream(String name)</code></p>
-<p>通过打开与实际的连接来建立一个读文件，该文件有文件系统中的路径名name命名<br>把相关的数据输出到控制台</p>
-<h5 id="2-71一个一个字节读"><a href="#2-71一个一个字节读" class="headerlink" title="2.71一个一个字节读"></a>2.71一个一个字节读</h5><p>核心代码<br>int len;<br>while ((f1 = fis.read()) != -1) {<br>           fos.write(f1);<br>        }</p>
-<h5 id="2-72一个一个字节数组读"><a href="#2-72一个一个字节数组读" class="headerlink" title="2.72一个一个字节数组读"></a>2.72一个一个字节数组读</h5><p>字节数组使用1024或者其倍数</p>
-<p>核心代码</p>
-<p>byte[] by = new byte[1024];<br>        int len;<br>        while ((len=fis.read(by)) != -1){<br>            fos.write(by,0,len);<br>       }</p>
-<h5 id="2-8字节缓冲流"><a href="#2-8字节缓冲流" class="headerlink" title="2.8字节缓冲流"></a>2.8字节缓冲流</h5><p><code>BufferedInputStream bis = new BufferedInputStream(</code></p>
-<p><code>new FileInputStream(&quot;文件路径&quot;));</code>输出流也同理</p>
-<p>最高可以缓冲8192个字节，极大提高速率。</p>
-<hr>
-<h3 id="3-字符流"><a href="#3-字符流" class="headerlink" title="3 字符流"></a>3 字符流</h3><h5 id="3-1-字符流"><a href="#3-1-字符流" class="headerlink" title="3.1 字符流"></a>3.1 字符流</h5><p>字符流就是字节流加上编码集</p>
-<h5 id="3-2-编码集"><a href="#3-2-编码集" class="headerlink" title="3.2 编码集"></a>3.2 编码集</h5><p>常见的编码集：ASCII码、GBK、UTF-8<br>使用什么编码就要使用什么解码，不然就会出现乱码</p>
-<h5 id="3-4-字符串编码和解码"><a href="#3-4-字符串编码和解码" class="headerlink" title="3.4 字符串编码和解码"></a>3.4 字符串编码和解码</h5><p>编码<br>byte[] getByte();<br>使用平台的默认的字符集</p>
-<p>byte[] getByte(String charsetName);<br>使用指定的字符集来存储</p>
-<p>解码<br>String (byte[] bytes)<br>通过平台的默认的字符集来解码</p>
-<p>String (byte[] bytes, String charsetName);<br>使用指定的字符集解码</p>
-<h5 id="3-5-字符流的编码和解码"><a href="#3-5-字符流的编码和解码" class="headerlink" title="3.5 字符流的编码和解码"></a>3.5 字符流的编码和解码</h5><p>字符流抽象基类<br>Reader        读取字符<br>Write            写入字符</p>
-<p>Reader具体类<br>InputStreamReader()        字节流到字符流的桥梁</p>
-<blockquote>
-</blockquote>
-<p>InputStreamReader(inputStream int);<br>使用默认的字符集<br>InputStreamReader(inputStream int, String charsetName)<br>使用指定的字符集<br>FileReader(String name)<br>改进版缩写了前面的复杂的格式</p>
-<p>Write具体类<br>OutputStreamWriter()        字符流到字符流的桥梁</p>
-<blockquote>
-<p>OutputStreamReader(OutputStream out);<br>使用默认的字符集<br>OutputStreamReader(OutputStream out, String charsetName)<br>使用指定的字符集<br>FileWrite(String name)<br>改进版缩写了前面的复杂的格式</p>
-</blockquote>
-<h5 id="3-6-字符流写数据的5种方式-把数据写文件"><a href="#3-6-字符流写数据的5种方式-把数据写文件" class="headerlink" title="3.6 字符流写数据的5种方式(把数据写文件)"></a>3.6 字符流写数据的5种方式(把数据写文件)</h5><p>1、void write(int c)<br>写一个字符</p>
-<p>2、void write(char[] cbuf)<br>写一个字符数组</p>
-<p>3、void write(char[] cbut, int off, int len)<br>写一字符数组的部分</p>
-<p>4、void write(String str)<br>写一个字符串</p>
-<p>5、void write(String str, int off, int len)<br>写一个字符串的部分</p>
-<p>释放流(写入文件)<br>void flush()</p>
-<p>关闭流(关闭)<br>void close()</p>
-<h5 id="3-7-字符流读数据-输出在控制台"><a href="#3-7-字符流读数据-输出在控制台" class="headerlink" title="3.7 字符流读数据(输出在控制台)"></a>3.7 字符流读数据(输出在控制台)</h5><p>两种方式<br>int read()<br>一次读一个字符数据</p>
-<p>int read(char cbuf)<br>一次读一个字符数组数据</p>
-<h5 id="3-8-字符缓冲流"><a href="#3-8-字符缓冲流" class="headerlink" title="3.8 字符缓冲流"></a>3.8 字符缓冲流</h5><p>bufferedWriter(Writer out)<br>字符输出缓冲流，提高字节、数组和字符串的高效写入</p>
-<p>bufferedReader(Reader in)<br>字符输入缓冲流，提高字节、数组和字符串的高效读取</p>
+<ul>
+<li>指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通行线路连接起来，在网络操作系统。网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统</li>
+</ul>
+<p>网络编程</p>
+<ul>
+<li>在网络通信协议下，实现网络互联的不同计算机上运行的程序间可以进行数据交换</li>
+</ul>
+<h5 id="1-2-网络编程三要素"><a href="#1-2-网络编程三要素" class="headerlink" title="1.2 网络编程三要素"></a>1.2 网络编程三要素</h5><p>1、IP地址</p>
+<ul>
+<li>计算机在网络中的唯一标识</li>
+</ul>
+<p>2、端口号</p>
+<ul>
+<li>计算机中的应用程序标识</li>
+</ul>
+<p>3、协议</p>
+<ul>
+<li>管理和连接网络的一系列规则，常见的有UDP和TCP协议</li>
+</ul>
+<h5 id="1-3-ip地址"><a href="#1-3-ip地址" class="headerlink" title="1.3 ip地址"></a>1.3 ip地址</h5><p>IP地址：计算机在网络中的唯一标识</p>
+<p>分为两大类：</p>
+<ul>
+<li>ipv4：是每个连接网络上的主机分配的一个32bit地址。按照TCP/IP规定，IP地址用二进制表示，有32位也是4个字节。使用点分十进制表示法</li>
+<li>ipv6：为了满足IP地址数量的不足，扩大地址空间，通过ipv6重新定义地址空间，采用128位地址长度，每16个字节一组，分为8组十六进制数，可以有效的解决ipv4地址数量不足的问题</li>
+</ul>
+<h5 id="1-4-InetAddress的使用"><a href="#1-4-InetAddress的使用" class="headerlink" title="1.4 InetAddress的使用"></a>1.4 InetAddress的使用</h5><p>为了获取IP地址java提供了InetAddress类给我们使用</p>
+<p>InetAddress：此类表示Internet协议（IP）协议</p>
+<ul>
+<li>static InetAddress getByName(String host);     确定主机名称的IP地址，主机名可以是机器名称，也可以是IP地址。</li>
+<li>String getHostName();     获取此IP地址的主机名</li>
+<li>String getHostAddress();    返回文本显示中的IP地址字符串</li>
+</ul>
+<h5 id="1-5-端口"><a href="#1-5-端口" class="headerlink" title="1.5 端口"></a>1.5 端口</h5><p>端口：设备上应用程序的唯一标识</p>
+<p>端口号：用两个字节表示的整数，取值范围是0<del>65535.其中，0</del>1023之间的端口号用于一些知名的网络服务和应用，普通的应用程序需要使用1024以上的端口号。如果一个端口被另一个服务或应用所占用，会导致当前应用程序启动失败。</p>
+<h5 id="1-6-协议"><a href="#1-6-协议" class="headerlink" title="1.6 协议"></a>1.6 协议</h5><p>协议：计算机网络中，连接和通信的规则被称为网络通信协议</p>
+<p>UDP协议</p>
+<ul>
+<li>中文名：用户数据报协议</li>
+<li>UDP是无连接通信协议，即在数据传输时，数据的发送端和接收端不建立逻辑连接。</li>
+<li>应用场景：视频会议、网络语言电话、即时通讯</li>
+</ul>
+<p>TCP协议</p>
+<ul>
+<li><p>中文名：传输控制协议</p>
+</li>
+<li><p>面向连接的通信协议，数据传输之前眼发送端和接收端建立逻辑连接，然后传输数据，他提供两台计算机之间可靠的数据传输，每次传输前都要建立三次握手</p>
+</li>
+<li><p>三次握手：TCP协议中，在发送数据的准备阶段，客户端和服务器之间的三次交换，以保证数据的可靠性</p>
+<p>  ​        第一次握手：客户端向服务器端发送连接请求，等待服务器确定</p>
+<p>  ​        第二次握手：服务器端向客户端回送一个响应，通知客户端收到连接</p>
+<p>  ​        第三次握手：客户端在次向服务器端发送确定信息，确定连接</p>
+</li>
+<li><p>应用场景：上传文件、下载文件、浏览网页</p>
+</li>
+</ul>
+<h4 id="2-UDP通信程序"><a href="#2-UDP通信程序" class="headerlink" title="2 UDP通信程序"></a>2 UDP通信程序</h4><h5 id="2-1-UDP通信原理"><a href="#2-1-UDP通信原理" class="headerlink" title="2.1 UDP通信原理"></a>2.1 UDP通信原理</h5><p>UDP协议是一种不可靠的网络协议，他在通信的两端各建立一个Socket对象，但是这两个Socket只是发送，接收数据的对象因此对于基于UDP协议的通信双方而言，没有所谓的客户端和服务器端的概念<br>Java提供DatagramSocket类作为基于UDP协议的Socket</p>
+<h5 id="2-2-UDP发送数据"><a href="#2-2-UDP发送数据" class="headerlink" title="2.2 UDP发送数据"></a>2.2 UDP发送数据</h5><p>具体步骤：</p>
+<ul>
+<li>创建发送端的Socket对象<ul>
+<li>DatagramSocket() 构造一个数据报套接字并将其绑定到本地主机上的任何可用端口。</li>
+</ul>
+</li>
+<li>创建数据，并把数据打包<ul>
+<li>DatagramPacket(byte[] buf, int length, InetAddress address, int port) 构造一个数据报包，用于将长度为 length的数据包发送到指定主机上的指定端口号。  </li>
+</ul>
+</li>
+<li>调用DatagramSocket对象的方法发送数据<ul>
+<li>void send(DatagramPacket p) 从此套接字发送数据报包。 </li>
+</ul>
+</li>
+<li>关闭发送端<ul>
+<li>void close();</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-3-UDP接收数据"><a href="#2-3-UDP接收数据" class="headerlink" title="2.3 UDP接收数据"></a>2.3 UDP接收数据</h5><p>具体步骤：</p>
+<ul>
+<li>创建接收端的Socket对象    <ul>
+<li>DatagramSocket(int port); 使用规定的端口号接收数据 </li>
+</ul>
+</li>
+<li>创建一个数据包，用于接收数据<ul>
+<li>DatagramPacket(byte[] buf, int length) 构建一个DatagramPacket 用于接收长度为Length数据包</li>
+</ul>
+</li>
+<li>调用DatagramSocket对象的方法接收数据<ul>
+<li>DatagramSocket void receive(DatagramPacket p) 从此套接字接收数据报包。 </li>
+</ul>
+</li>
+<li>解析数据包，并把数据在控制台输出<ul>
+<li>DatagramPacke byte[] getData() 返回数据缓冲区。  </li>
+</ul>
+</li>
+<li>关闭接收端<ul>
+<li>void close();</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-TCP通信程序"><a href="#3-TCP通信程序" class="headerlink" title="3 TCP通信程序"></a>3 TCP通信程序</h4><h5 id="3-1-TCP通信原理"><a href="#3-1-TCP通信原理" class="headerlink" title="3.1 TCP通信原理"></a>3.1 TCP通信原理</h5><p>TCP通信协议是一种可靠的网络协议，他在两端各建立一个Socket对象，从而在通信的两端形成网络虚拟链路，一旦建立虚拟链路，两端就可以通信</p>
+<p>java对基于TCP协议的网络提供了良好的封装，使用Socket对象来代表两端的通信端口，并通过socket产生IO流来进行网络通信</p>
+<p>java为客户端提供Socket类，为服务器端提供ServerSocket类</p>
+<h5 id="3-2-TCP传送数据"><a href="#3-2-TCP传送数据" class="headerlink" title="3.2 TCP传送数据"></a>3.2 TCP传送数据</h5><p>具体步骤：</p>
+<ul>
+<li>创建客户端的Socket对象<ul>
+<li>Socket(String host, int port) 创建流套接字并将其连接到指定主机上的指定端口号。 </li>
+</ul>
+</li>
+<li>获取输出流，写数据<ul>
+<li>OutputStream getOutputStream() 返回此套接字的输出流，不需要new，使用socket对象。</li>
+</ul>
+</li>
+<li>释放资源<ul>
+<li>void close();</li>
+</ul>
+</li>
+</ul>
+<p>注意问题：没有服务器端发送数据会出现异常。</p>
+<h5 id="3-3-TCP接收数据"><a href="#3-3-TCP接收数据" class="headerlink" title="3.3 TCP接收数据"></a>3.3 TCP接收数据</h5><p>具体步骤：</p>
+<ul>
+<li>创建服务器端的Socket对象(ServerSocket)<ul>
+<li>ServerSocket(int port) 创建绑定到指定端口的服务器套接字。 </li>
+</ul>
+</li>
+<li>监听客户端的连接，返回一个Socket对象<ul>
+<li>Socket accept() 侦听对此套接字的连接并接受它，使用服务器端的socket对象，不需要new。</li>
+</ul>
+</li>
+<li>获取输入流，读数据并把数据显示在控制台<ul>
+<li>InputStream 他接收的是Socket对象，而不需要new。(getInputStream方法)</li>
+</ul>
+</li>
+<li>释放资源</li>
+</ul>
 
       
 
@@ -314,7 +397,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/30/java_IO%E6%B5%81/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/02/Network/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -328,18 +411,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/05/02/Network/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/06/Thread/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Network
+          Thread
         
       </div>
     </a>
   
   
-    <a href="/2020/04/28/%E4%BD%BF%E7%94%A8Typore%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用Typora的使用说明</div>
+    <a href="/2020/04/30/java_IO%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java笔记(IO流)</div>
       <i class="icon-circle-right"></i>
     </a>
   
